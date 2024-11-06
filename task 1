@@ -1,0 +1,100 @@
+//zadanie 1
+#include <iostream>
+
+int main() {
+    
+    double R1, R2, R3, R0;
+    
+    std::cout << "Введите R1: ";
+    std::cin >> R1;
+    std::cout << "Введите R2: ";
+    std::cin >> R2;
+    std::cout << "Введите R3: ";
+    std::cin >> R3;
+
+    R0 = 1 / (1/R1 + 1/R2 + 1/R3);
+    
+    std::cout << "Сопротивление R0: " << R0 << " Ом";
+    return 0;
+}
+
+//zadanie 2
+#include <iostream>
+#include <cmath>
+
+int main() {
+    
+    double L, R, S;
+    
+    std::cout << "Введите длину окружности: ";
+    std::cin >> L;
+
+    R = L / (2 * M_PI);
+    S = M_PI * pow(R, 2);
+    
+    std::cout << "Площадь круга: " << S << " квадратных единиц";
+    return 0;
+}
+
+//zadanie 3
+#include <iostream>
+
+int main() {
+    
+    double v, t, a, S;
+
+    std::cout << "Введите скорость (м/с): ";
+    std::cin >> v;
+    std::cout << "Введите время (с): ";
+    std::cin >> t;
+    std::cout << "Введите ускорение (м/с²): ";
+    std::cin >> a;
+
+    S = v * t + (a * pow(t, 2)) / 2;
+
+    std::cout << "Пройденное расстояние: " << S << " метров" << endl;
+    return 0;
+}
+
+//zadanie 4
+#include <iostream>
+
+int main() {
+    
+    int total_seconds;
+    
+    std::cout << "Введите время в секундах: ";
+    std::cin >> total_seconds;
+
+    int hours = total_seconds / 3600;
+    int minutes = (total_seconds % 3600) / 60;
+    int seconds_remaining = total_seconds % 60;
+
+    std::cout << total_seconds << " секунд — это " 
+         << hours << " часов, " 
+         << minutes << " минут и " 
+         << seconds_remaining << " секунд." << endl;
+
+    return 0;
+}
+ //zadanie 5
+ #include <iostream>
+#include <iomanip>
+
+int main() {
+    
+    double amount;
+
+    std::cout << "Введите сумму в виде дробного числа: ";
+    std::cin >> amount;
+
+    int dollars = static_cast<int>(amount);
+    int cents = static_cast<int>((amount - dollars) * 100 + 0.5); // Округление
+
+    std::cout << fixed << setprecision(2);
+    std::cout << amount << " — это " 
+         << dollars << " долларов и " 
+         << cents << " центов." << endl;
+
+    return 0;
+}
